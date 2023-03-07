@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Threading.Tasks;
 using Character;
 using Cysharp.Threading.Tasks;
 using NUnit.Framework;
@@ -28,12 +29,18 @@ namespace Tests.Runtime
         {
             Install();
 
-            characterFactory = Container.Resolve<CharacterFactory>();
-
-            await characterFactory.Create(0);
+            await GivenACharacter();
 
             Assert.IsNotNull(Object.FindObjectOfType<CharacterView>());
         });
+
+        private async Task<GameObject> GivenACharacter()
+        {
+            characterFactory = Container.Resolve<CharacterFactory>();
+
+            var character = await characterFactory.Create(0);
+            return character;
+        }
 
         private void Install()
         {
@@ -44,7 +51,7 @@ namespace Tests.Runtime
             Container.BindInstance(characterSettings.factorySetting).IfNotBound();
 
             Container.Bind<CharacterFactory>().AsSingle();
-            
+
             PostInstall();
         }
     }

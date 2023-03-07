@@ -17,10 +17,10 @@ namespace Character
             this.container = container;
         }
         
-        public async UniTask Create(int index)
+        public async UniTask<GameObject> Create(int index)
         {
             var characterObj = await Addressables.LoadAssetAsync<GameObject>(setting.characterAssets[index]).Task;
-            container.InstantiatePrefab(characterObj);
+            return container.InstantiatePrefab(characterObj);
         }
         
         [Serializable]
