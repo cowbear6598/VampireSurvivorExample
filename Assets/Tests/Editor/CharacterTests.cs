@@ -1,6 +1,7 @@
 ﻿using Character;
 using NUnit.Framework;
 using UnityEditor;
+using UnityEngine;
 using Zenject;
 
 namespace Tests.Editor
@@ -13,13 +14,24 @@ namespace Tests.Editor
         public override void Setup()
         {
             base.Setup();
+
             characterSettings = AssetDatabase.LoadAssetAtPath<CharacterSettingsInstaller>("Assets/Data/CharacterSettings.asset");
+
+            Container.BindInstance(characterSettings.factorySetting).IfNotBound();
+            Container.Bind<CharacterFactory>().AsSingle();
         }
 
         [Test]
-        public void Should_Load_Character_Settings()
+        public void Load_Character_Settings()
         {
             Assert.AreEqual(1, characterSettings.factorySetting.characterAssets.Length);
+        }
+
+        [Test]
+        public void Spawn_Character()
+        {
+            var characterFactory = Container.Resolve<CharacterFactory>();
+
         }
     }
 }

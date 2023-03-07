@@ -1,22 +1,25 @@
 ﻿using System;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using Zenject;
 
 namespace Character
 {
     public class CharacterFactory
     {
-        private readonly Setting setting;
+        private readonly Setting     setting;
+        private readonly DiContainer container;
 
-        public CharacterFactory(Setting setting)
+        public CharacterFactory(Setting setting, DiContainer container)
         {
-            this.setting = setting;
+            this.setting   = setting;
+            this.container = container;
         }
         
         public async void Create(int index)
         {
-            
+            var characterObj = await Addressables.LoadAssetAsync<GameObject>(setting.characterAssets[index]).Task;
+            container.InstantiatePrefab(characterObj);
         }
         
         [Serializable]
