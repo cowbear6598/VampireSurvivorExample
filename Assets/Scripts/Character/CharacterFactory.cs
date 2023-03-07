@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
@@ -16,7 +17,7 @@ namespace Character
             this.container = container;
         }
         
-        public async void Create(int index)
+        public async UniTask Create(int index)
         {
             var characterObj = await Addressables.LoadAssetAsync<GameObject>(setting.characterAssets[index]).Task;
             container.InstantiatePrefab(characterObj);
