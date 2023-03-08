@@ -25,14 +25,42 @@ namespace Tests.Runtime
         }
 
         [UnityTest]
-        public IEnumerator Should_Spawn_Character_Success() => UniTask.ToCoroutine(async () =>
+        public IEnumerator Should_Spawn_Character_Success()
         {
-            Install();
+            return UniTask.ToCoroutine(async () =>
+            {
+                Install();
 
-            await GivenACharacter();
+                await GivenACharacter();
 
-            Assert.IsNotNull(Object.FindObjectOfType<CharacterView>());
-        });
+                Assert.IsNotNull(Object.FindObjectOfType<CharacterView>());
+            });
+        }
+
+        [UnityTest]
+        [TestCase(1, 0, 1, 0, ExpectedResult = null)]
+        [TestCase(0, 1, 0, 1, ExpectedResult = null)]
+        public IEnumerator Should_Character_Move(float expectedX, float expectedY, float xAxis, float yAxis)
+        {
+            return UniTask.ToCoroutine(async () =>
+            {
+                Install();
+
+                await GivenACharacter();
+
+                Container.Bind<CharacterView>().FromNewComponentOnNewGameObject().AsSingle();
+                Container.Bind<CharacterMoveHandler>().AsSingle();
+
+                var characterMoveHandler = Container.Resolve<CharacterMoveHandler>();
+
+                characterMoveHandler.Move(xAxis, yAxis);
+
+                var characterView = Container.Resolve<CharacterView>();
+
+                Assert.AreEqual(expectedX, characterView.transform.position.x);
+                Assert.AreEqual(expectedY, characterView.transform.position.y);
+            });
+        }
 
         private async Task<GameObject> GivenACharacter()
         {
