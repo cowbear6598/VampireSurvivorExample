@@ -20,6 +20,7 @@ namespace Character
         public async UniTask<GameObject> Create(int index)
         {
             var characterObj = await Addressables.LoadAssetAsync<GameObject>(setting.characterAssets[index]).Task;
+            await Addressables.LoadAssetAsync<GameObject>(setting.characterAssets[index]).Task;
             return container.InstantiatePrefab(characterObj);
         }
         

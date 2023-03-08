@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Test Runner
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 176
+  controlID: 110
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 91
+  controlID: 27
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,8 +166,8 @@ MonoBehaviour:
     y: 0
     width: 1056
     height: 418
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 418
     width: 1056
     height: 521
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -271,14 +271,14 @@ MonoBehaviour:
     y: 0
     width: 413
     height: 939
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 18}
   - {fileID: 12}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -313,7 +313,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 329
+    ID: 143
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
@@ -344,8 +344,8 @@ MonoBehaviour:
       uniqueId: '[VampireSurvivor][suite]'
       name: VampireSurvivor
       fullName: VampireSurvivor
-      resultStatus: 1
-      duration: 0.6162351
+      resultStatus: 0
+      duration: 0.4211234
       messages: 
       output: 
       stacktrace: 
@@ -356,12 +356,12 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1003
+    - id: 1007
       uniqueId: '[Tests.Runtime.dll][suite]'
       name: Tests.Runtime.dll
       fullName: D:/Unity_Project/VampireSurvivor/Library/ScriptAssemblies/Tests.Runtime.dll
-      resultStatus: 1
-      duration: 0.5769084
+      resultStatus: 0
+      duration: 0.3816566
       messages: 
       output: 
       stacktrace: 
@@ -372,12 +372,12 @@ MonoBehaviour:
       categories: []
       parentId: 1000
       parentUniqueId: '[VampireSurvivor][suite]'
-    - id: 1004
+    - id: 1008
       uniqueId: Tests.Runtime.dll/[Tests][suite]
       name: Tests
       fullName: Tests
-      resultStatus: 1
-      duration: 0.5458998
+      resultStatus: 0
+      duration: 0.3506924
       messages: 
       output: 
       stacktrace: 
@@ -386,14 +386,14 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1003
+      parentId: 1007
       parentUniqueId: '[Tests.Runtime.dll][suite]'
-    - id: 1005
+    - id: 1009
       uniqueId: Tests.Runtime.dll/Tests/[Tests.Runtime][Tests.Runtime][suite]
       name: Runtime
       fullName: Tests.Runtime
-      resultStatus: 1
-      duration: 0.5126051
+      resultStatus: 0
+      duration: 0.317426
       messages: 
       output: 
       stacktrace: 
@@ -402,14 +402,14 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1004
+      parentId: 1008
       parentUniqueId: Tests.Runtime.dll/[Tests][suite]
     - id: 1001
       uniqueId: Tests.Runtime.dll/Tests/Runtime/[Tests.Runtime][Tests.Runtime.CharacterTests][suite]
       name: CharacterTests
       fullName: Tests.Runtime.CharacterTests
-      resultStatus: 1
-      duration: 0.4783507
+      resultStatus: 0
+      duration: 0.2832818
       messages: 
       output: 
       stacktrace: 
@@ -418,14 +418,64 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1005
+      parentId: 1009
       parentUniqueId: Tests.Runtime.dll/Tests/[Tests.Runtime][Tests.Runtime][suite]
+    - id: 1005
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
+      name: Should_Character_Move
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move
+      resultStatus: 0
+      duration: 0.3060157
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1001
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/[Tests.Runtime][Tests.Runtime.CharacterTests][suite]
+    - id: 1004
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(1,0,1,0)]
+      name: Should_Character_Move(1,0,1,0)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(1,0,1,0)
+      resultStatus: 1
+      duration: 0.2610959
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1005
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
+    - id: 1005
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(0,1,0,1)]
+      name: Should_Character_Move(0,1,0,1)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(0,1,0,1)
+      resultStatus: 2
+      duration: 0
+      messages: Cancelled by user
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
     - id: 1002
       uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Load_Character_Settings_Success]
       name: Should_Load_Character_Settings_Success
       fullName: Tests.Runtime.CharacterTests.Should_Load_Character_Settings_Success
-      resultStatus: 1
-      duration: 0.1716744
+      resultStatus: 0
+      duration: 0.1600379
       messages: 
       output: 
       stacktrace: 
@@ -441,9 +491,9 @@ MonoBehaviour:
       uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Spawn_Character_Success]
       name: Should_Spawn_Character_Success
       fullName: Tests.Runtime.CharacterTests.Should_Spawn_Character_Success
-      resultStatus: 1
-      duration: 0.2687859
-      messages: 
+      resultStatus: 0
+      duration: 0
+      messages: Cancelled by user
       output: 
       stacktrace: 
       notRunnable: 0
@@ -454,13 +504,18 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Tests.Runtime.dll/Tests/Runtime/[Tests.Runtime][Tests.Runtime.CharacterTests][suite]
-    m_ResultText: Should_Spawn_Character_Success (0.269s)
+    m_ResultText: 'Should_Character_Move(0,1,0,1) (0.000s)
+
+      ---
+
+      Cancelled
+      by user'
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ffa28fd9
-      m_LastClickedID: -644898049
-      m_ExpandedIDs: 81223b99b28005acd30b5fbde95dd3cc623b622dffffff7f
+      m_SelectedIDs: bc2949a2
+      m_LastClickedID: -1572263492
+      m_ExpandedIDs: 81223b99b28005acd30b5fbde95dd3cc9dff6422623b622dffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -506,104 +561,6 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1004
-      uniqueId: '[Tests.Editor.dll][suite]'
-      name: Tests.Editor.dll
-      fullName: D:/Unity_Project/VampireSurvivor/Library/ScriptAssemblies/Tests.Editor.dll
-      resultStatus: 1
-      duration: 0.4689848
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1000
-      parentUniqueId: '[VampireSurvivor][suite]'
-    - id: 1005
-      uniqueId: Tests.Editor.dll/[Tests][suite]
-      name: Tests
-      fullName: Tests
-      resultStatus: 1
-      duration: 0.3746784
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1004
-      parentUniqueId: '[Tests.Editor.dll][suite]'
-    - id: 1006
-      uniqueId: Tests.Editor.dll/Tests/[Tests.Editor][Tests.Editor][suite]
-      name: Editor
-      fullName: Tests.Editor
-      resultStatus: 1
-      duration: 0.2740728
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1005
-      parentUniqueId: Tests.Editor.dll/[Tests][suite]
-    - id: 1002
-      uniqueId: Tests.Editor.dll/Tests/Editor/[Tests.Editor][Tests.Editor.CharacterTests][suite]
-      name: CharacterTests
-      fullName: Tests.Editor.CharacterTests
-      resultStatus: 1
-      duration: 0.1708526
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1006
-      parentUniqueId: Tests.Editor.dll/Tests/[Tests.Editor][Tests.Editor][suite]
-    - id: 1003
-      uniqueId: Tests.Editor.dll/Tests/Editor/CharacterTests/[Tests.Editor][Tests.Editor.CharacterTests.Load_Character_Settings]
-      name: Load_Character_Settings
-      fullName: Tests.Editor.CharacterTests.Load_Character_Settings
-      resultStatus: 1
-      duration: 0.0358204
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1002
-      parentUniqueId: Tests.Editor.dll/Tests/Editor/[Tests.Editor][Tests.Editor.CharacterTests][suite]
-    - id: 1004
-      uniqueId: Tests.Editor.dll/Tests/Editor/CharacterTests/[Tests.Editor][Tests.Editor.CharacterTests.Spawn_Character]
-      name: Spawn_Character
-      fullName: Tests.Editor.CharacterTests.Spawn_Character
-      resultStatus: 1
-      duration: 0.0333322
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1002
-      parentUniqueId: Tests.Editor.dll/Tests/Editor/[Tests.Editor][Tests.Editor.CharacterTests][suite]
     m_ResultText: 
     m_ResultStacktrace: 
     m_TestListState:
@@ -978,7 +935,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -1030,7 +987,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -1373,7 +1330,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5cc3ffff64d0ffffb4d5ffffc0f3ffff62f4ffff04f8ffff12fbffff14fbffff
+      m_ExpandedIDs: 6e79ffff107affff0e7efffff083ffff9284ffff5288ffffaa8affff4c8bffff0e8fffff0892ffffaa92ffff8296ffff2e99ffffd099ffff729dffff169effffb89effffa6a2ffff92afffff34b0fffff6b3ffff60b6ffff02b7ffffa6baffff4abbffffecbbffffaabfffff76c0ffff18c1ffffd4c4ffff24c7ffffc8c7ffffe4c8fffff0c8ffffbcc9ffff96caffff3acbffffe6ceffff8ccfffff30d0ffff9ed3ffff44d4ffffe8d4ffff9ad8ffff40d9ffffe4d9ffffb2ddffff14fbfffff4ffffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1389,7 +1346,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 7}
+        m_ClientGUIView: {fileID: 9}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1442,8 +1399,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Scripts
+    m_Folders: []
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1458,7 +1414,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 32700000
     m_LastClickedID: 28722
-    m_ExpandedIDs: 00000000b26c0000b46c0000b66c0000b86c0000ba6c0000bc6c0000be6c0000c06c0000c26c0000
+    m_ExpandedIDs: 00000000aa6c0000ac6c0000ae6c0000b06c0000b26c0000b46c0000b66c0000b86c0000ba6c0000bc6c0000be6c0000c06c0000c26c0000c46c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1486,7 +1442,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000b26c0000b46c0000b66c0000b86c0000ba6c0000bc6c0000c06c0000c26c0000946e0000a86e000056710000
+    m_ExpandedIDs: ffffffff00000000aa6c0000ac6c0000ae6c0000b06c0000b26c0000b46c0000b66c0000b86c0000ba6c0000bc6c0000be6c0000c06c0000c26c0000c46c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1582,7 +1538,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 331
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

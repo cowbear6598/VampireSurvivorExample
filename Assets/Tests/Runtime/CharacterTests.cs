@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Threading.Tasks;
 using Character;
 using Cysharp.Threading.Tasks;
 using NUnit.Framework;
+using TimeSystem;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -13,6 +13,7 @@ namespace Tests.Runtime
     public class CharacterTests : ZenjectIntegrationTestFixture
     {
         private CharacterFactory characterFactory;
+        private ITimeService     timeService;
 
         [UnityTest]
         public IEnumerator Should_Load_Character_Settings_Success()
@@ -33,13 +34,19 @@ namespace Tests.Runtime
 
                 await GivenACharacter();
 
-                Assert.IsNotNull(Object.FindObjectOfType<CharacterView>());
+                Assert.IsNotNull(Container.Resolve<CharacterView>());
             });
         }
 
         [UnityTest]
-        [TestCase(1, 0, 1, 0, ExpectedResult = null)]
+        [TestCase(-1, 0, -1, 0, ExpectedResult = null)]
         [TestCase(0, 1, 0, 1, ExpectedResult = null)]
+        [TestCase(1, 0, 1, 0, ExpectedResult = null)]
+        [TestCase(0, -1, 0, -1, ExpectedResult = null)]
+        [TestCase(1, 1, 1, 1, ExpectedResult = null)]
+        [TestCase(1, -1, 1, -1, ExpectedResult = null)]
+        [TestCase(-1, -1, -1, -1, ExpectedResult = null)]
+        [TestCase(-1, 1, -1, 1, ExpectedResult = null)]
         public IEnumerator Should_Character_Move(float expectedX, float expectedY, float xAxis, float yAxis)
         {
             return UniTask.ToCoroutine(async () =>
@@ -48,39 +55,43 @@ namespace Tests.Runtime
 
                 await GivenACharacter();
 
-                Container.Bind<CharacterView>().FromNewComponentOnNewGameObject().AsSingle();
-                Container.Bind<CharacterMoveHandler>().AsSingle();
-
                 var characterMoveHandler = Container.Resolve<CharacterMoveHandler>();
+                var characterView        = Container.Resolve<CharacterView>();
 
                 characterMoveHandler.Move(xAxis, yAxis);
-
-                var characterView = Container.Resolve<CharacterView>();
 
                 Assert.AreEqual(expectedX, characterView.transform.position.x);
                 Assert.AreEqual(expectedY, characterView.transform.position.y);
             });
         }
 
-        private async Task<GameObject> GivenACharacter()
+        private async UniTask GivenACharacter()
         {
-            characterFactory = Container.Resolve<CharacterFactory>();
+            await characterFactory.Create(0);
 
-            var character = await characterFactory.Create(0);
-            return character;
+            Container.Bind<CharacterView>().FromNewComponentOnNewGameObject().AsSingle();
+            Container.Bind<CharacterMoveHandler>().AsSingle();
         }
 
         private void Install()
         {
             PreInstall();
 
+            BindCharacter();
+
+            Container.BindInterfacesAndSelfTo<FakeTimeService>().AsSingle();
+
+            PostInstall();
+        }
+
+        private void BindCharacter()
+        {
             var characterSettings = AssetDatabase.LoadAssetAtPath<CharacterSettingsInstaller>("Assets/Data/CharacterSettings.asset");
 
             Container.BindInstance(characterSettings.factorySetting).IfNotBound();
-
             Container.Bind<CharacterFactory>().AsSingle();
 
-            PostInstall();
+            characterFactory = Container.Resolve<CharacterFactory>();
         }
     }
 }
