@@ -16,14 +16,18 @@ namespace Character
             this.setting   = setting;
             this.container = container;
         }
-        
+
         public async UniTask<GameObject> Create(int index)
         {
-            var characterObj = await Addressables.LoadAssetAsync<GameObject>(setting.characterAssets[index]).Task;
-            await Addressables.LoadAssetAsync<GameObject>(setting.characterAssets[index]).Task;
-            return container.InstantiatePrefab(characterObj);
+            var loadAsync = Addressables.LoadAssetAsync<GameObject>(setting.characterAssets[index]);
+
+            var characterObj = container.InstantiatePrefab(await loadAsync.Task);
+
+            Addressables.Release(loadAsync);
+            
+            return characterObj;
         }
-        
+
         [Serializable]
         public class Setting
         {
