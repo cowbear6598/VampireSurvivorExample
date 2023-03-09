@@ -7,11 +7,17 @@ namespace Game
 {
     public class GameView : MonoBehaviour
     {
-        [Inject] private readonly CharacterFactory characterFactory;
-
-        private async void Start()
+        private CharacterSpawner characterSpawner;
+        
+        [Inject]
+        public void Inject(CharacterSpawner characterSpawner)
         {
-            await characterFactory.Create(0);
+            this.characterSpawner = characterSpawner;
+        }
+
+        private void Start()
+        {
+            characterSpawner.SpawnPlayer(0);
         }
     }
 }

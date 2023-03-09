@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Test Runner
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 418
     width: 1056
     height: 521
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -217,7 +217,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1056
     y: 0
-    width: 262
+    width: 158
     height: 939
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
@@ -241,9 +241,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1318
+    x: 1214
     y: 0
-    width: 189
+    width: 175
     height: 939
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
@@ -262,23 +262,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TestRunnerWindow
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1507
+    x: 1389
     y: 0
-    width: 413
+    width: 531
     height: 939
-  m_MinSize: {x: 101, y: 121}
+  m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,9 +299,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 3427
+    x: 3309
     y: 73
-    width: 412
+    width: 530
     height: 918
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 143
+    ID: 142
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
@@ -344,8 +344,8 @@ MonoBehaviour:
       uniqueId: '[VampireSurvivor][suite]'
       name: VampireSurvivor
       fullName: VampireSurvivor
-      resultStatus: 0
-      duration: 0.4211234
+      resultStatus: 1
+      duration: 2.930102
       messages: 
       output: 
       stacktrace: 
@@ -360,8 +360,8 @@ MonoBehaviour:
       uniqueId: '[Tests.Runtime.dll][suite]'
       name: Tests.Runtime.dll
       fullName: D:/Unity_Project/VampireSurvivor/Library/ScriptAssemblies/Tests.Runtime.dll
-      resultStatus: 0
-      duration: 0.3816566
+      resultStatus: 1
+      duration: 2.8735278
       messages: 
       output: 
       stacktrace: 
@@ -376,8 +376,8 @@ MonoBehaviour:
       uniqueId: Tests.Runtime.dll/[Tests][suite]
       name: Tests
       fullName: Tests
-      resultStatus: 0
-      duration: 0.3506924
+      resultStatus: 1
+      duration: 2.843182
       messages: 
       output: 
       stacktrace: 
@@ -392,8 +392,8 @@ MonoBehaviour:
       uniqueId: Tests.Runtime.dll/Tests/[Tests.Runtime][Tests.Runtime][suite]
       name: Runtime
       fullName: Tests.Runtime
-      resultStatus: 0
-      duration: 0.317426
+      resultStatus: 1
+      duration: 2.8098116
       messages: 
       output: 
       stacktrace: 
@@ -408,8 +408,8 @@ MonoBehaviour:
       uniqueId: Tests.Runtime.dll/Tests/Runtime/[Tests.Runtime][Tests.Runtime.CharacterTests][suite]
       name: CharacterTests
       fullName: Tests.Runtime.CharacterTests
-      resultStatus: 0
-      duration: 0.2832818
+      resultStatus: 1
+      duration: 2.776066
       messages: 
       output: 
       stacktrace: 
@@ -420,12 +420,12 @@ MonoBehaviour:
       categories: []
       parentId: 1009
       parentUniqueId: Tests.Runtime.dll/Tests/[Tests.Runtime][Tests.Runtime][suite]
-    - id: 1005
+    - id: 1012
       uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
       name: Should_Character_Move
       fullName: Tests.Runtime.CharacterTests.Should_Character_Move
-      resultStatus: 0
-      duration: 0.3060157
+      resultStatus: 1
+      duration: 2.309187
       messages: 
       output: 
       stacktrace: 
@@ -437,11 +437,11 @@ MonoBehaviour:
       parentId: 1001
       parentUniqueId: Tests.Runtime.dll/Tests/Runtime/[Tests.Runtime][Tests.Runtime.CharacterTests][suite]
     - id: 1004
-      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(1,0,1,0)]
-      name: Should_Character_Move(1,0,1,0)
-      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(1,0,1,0)
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(-1,0,-1,0)]
+      name: Should_Character_Move(-1,0,-1,0)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(-1,0,-1,0)
       resultStatus: 1
-      duration: 0.2610959
+      duration: 0.3488562
       messages: 
       output: 
       stacktrace: 
@@ -451,15 +451,15 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1005
+      parentId: 1012
       parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
     - id: 1005
       uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(0,1,0,1)]
       name: Should_Character_Move(0,1,0,1)
       fullName: Tests.Runtime.CharacterTests.Should_Character_Move(0,1,0,1)
-      resultStatus: 2
-      duration: 0
-      messages: Cancelled by user
+      resultStatus: 1
+      duration: 0.2250017
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -468,14 +468,116 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1006
+      parentId: 1012
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
+    - id: 1006
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(1,0,1,0)]
+      name: Should_Character_Move(1,0,1,0)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(1,0,1,0)
+      resultStatus: 1
+      duration: 0.2830759
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
+    - id: 1007
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(0,-1,0,-1)]
+      name: Should_Character_Move(0,-1,0,-1)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(0,-1,0,-1)
+      resultStatus: 1
+      duration: 0.2833319
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
+    - id: 1008
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(1,1,1,1)]
+      name: Should_Character_Move(1,1,1,1)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(1,1,1,1)
+      resultStatus: 1
+      duration: 0.2832286
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
+    - id: 1009
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(1,-1,1,-1)]
+      name: Should_Character_Move(1,-1,1,-1)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(1,-1,1,-1)
+      resultStatus: 1
+      duration: 0.2829768
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
+    - id: 1010
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(-1,-1,-1,-1)]
+      name: Should_Character_Move(-1,-1,-1,-1)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(-1,-1,-1,-1)
+      resultStatus: 1
+      duration: 0.283517
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
+    - id: 1011
+      uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/Should_Character_Move/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move(-1,1,-1,1)]
+      name: Should_Character_Move(-1,1,-1,1)
+      fullName: Tests.Runtime.CharacterTests.Should_Character_Move(-1,1,-1,1)
+      resultStatus: 1
+      duration: 0.2833885
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
       parentUniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Character_Move][suite]
     - id: 1002
       uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Load_Character_Settings_Success]
       name: Should_Load_Character_Settings_Success
       fullName: Tests.Runtime.CharacterTests.Should_Load_Character_Settings_Success
-      resultStatus: 0
-      duration: 0.1600379
+      resultStatus: 1
+      duration: 0.1487088
       messages: 
       output: 
       stacktrace: 
@@ -491,9 +593,9 @@ MonoBehaviour:
       uniqueId: Tests.Runtime.dll/Tests/Runtime/CharacterTests/[Tests.Runtime][Tests.Runtime.CharacterTests.Should_Spawn_Character_Success]
       name: Should_Spawn_Character_Success
       fullName: Tests.Runtime.CharacterTests.Should_Spawn_Character_Success
-      resultStatus: 0
-      duration: 0
-      messages: Cancelled by user
+      resultStatus: 1
+      duration: 0.2833511
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -504,17 +606,12 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: Tests.Runtime.dll/Tests/Runtime/[Tests.Runtime][Tests.Runtime.CharacterTests][suite]
-    m_ResultText: 'Should_Character_Move(0,1,0,1) (0.000s)
-
-      ---
-
-      Cancelled
-      by user'
+    m_ResultText: Should_Character_Move(-1,1,-1,1) (0.283s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: bc2949a2
-      m_LastClickedID: -1572263492
+      m_SelectedIDs: 569f0691
+      m_LastClickedID: -1861836970
       m_ExpandedIDs: 81223b99b28005acd30b5fbde95dd3cc9dff6422623b622dffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1314,7 +1411,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 2976
     y: 73
-    width: 260
+    width: 156
     height: 918
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1330,7 +1427,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6e79ffff107affff0e7efffff083ffff9284ffff5288ffffaa8affff4c8bffff0e8fffff0892ffffaa92ffff8296ffff2e99ffffd099ffff729dffff169effffb89effffa6a2ffff92afffff34b0fffff6b3ffff60b6ffff02b7ffffa6baffff4abbffffecbbffffaabfffff76c0ffff18c1ffffd4c4ffff24c7ffffc8c7ffffe4c8fffff0c8ffffbcc9ffff96caffff3acbffffe6ceffff8ccfffff30d0ffff9ed3ffff44d4ffffe8d4ffff9ad8ffff40d9ffffe4d9ffffb2ddffff14fbfffff4ffffff
+      m_ExpandedIDs: e6ebffff66f2ffff14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1374,9 +1471,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 3238
+    x: 3134
     y: 73
-    width: 187
+    width: 173
     height: 918
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1399,7 +1496,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Scripts/PlayerController
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1414,7 +1512,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 32700000
     m_LastClickedID: 28722
-    m_ExpandedIDs: 00000000aa6c0000ac6c0000ae6c0000b06c0000b26c0000b46c0000b66c0000b86c0000ba6c0000bc6c0000be6c0000c06c0000c26c0000c46c0000
+    m_ExpandedIDs: 000000009c6d00009e6d0000a06d0000a26d0000a46d0000a66d0000a86d0000aa6d0000ac6d0000ae6d0000b06d0000b26d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1442,7 +1540,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000aa6c0000ac6c0000ae6c0000b06c0000b26c0000b46c0000b66c0000b86c0000ba6c0000bc6c0000be6c0000c06c0000c26c0000c46c0000
+    m_ExpandedIDs: ffffffff000000009c6d00009e6d0000a06d0000a26d0000a46d0000a66d0000a86d0000aa6d0000ac6d0000ae6d0000b06d0000b26d0000946f00005c7c00005e7c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1518,9 +1616,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 3427
+    x: 3309
     y: 73
-    width: 412
+    width: 530
     height: 918
   m_SerializedDataModeController:
     m_DataMode: 0

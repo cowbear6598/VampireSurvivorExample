@@ -1,4 +1,5 @@
 ﻿using Character;
+using Player;
 using Zenject;
 
 namespace Game
@@ -7,7 +8,9 @@ namespace Game
     {
         public override void InstallBindings()
         {
-            Container.Bind<CharacterFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle();
+
+            Container.Bind<CharacterSpawner>().AsSingle();
         }
     }
 }

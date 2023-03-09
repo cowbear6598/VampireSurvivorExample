@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4199459308875859598}
-  - component: {fileID: 4024804862686041137}
+  - component: {fileID: 1367145159159935726}
   m_Layer: 0
   m_Name: Installer
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 4615674254539087122}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4024804862686041137
+--- !u!114 &1367145159159935726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1002823394705047152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3fdea02b0f4163a835115397df541d, type: 3}
+  m_Script: {fileID: 11500000, guid: ad7e726e5286471584e7445d71047c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4615674254539087123
@@ -54,10 +54,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4615674254539087122}
   - component: {fileID: 7642370402976932523}
-  - component: {fileID: 9047550492606726346}
-  - component: {fileID: 1710048860240195784}
+  - component: {fileID: -5089128565860449122}
+  - component: {fileID: 4997923210024816203}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,12 +93,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _components:
-  - {fileID: 9047550492606726346}
+  - {fileID: -5089128565860449122}
   _identifier: 
   _useSceneContext: 0
   _context: {fileID: 0}
   _bindType: 0
---- !u!114 &9047550492606726346
+--- !u!114 &-5089128565860449122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,10 +107,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4615674254539087123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa95340fe014c44b9cf99c2450e861f, type: 3}
+  m_Script: {fileID: 11500000, guid: 11951c6c58464a64b622fa55052b9739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1710048860240195784
+--- !u!114 &4997923210024816203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 4024804862686041137}
+  - {fileID: 1367145159159935726}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
