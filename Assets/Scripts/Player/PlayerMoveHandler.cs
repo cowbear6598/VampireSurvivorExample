@@ -29,7 +29,10 @@ namespace Player
 
         public void Tick()
         {
-            Move(input.GetHorizontal(), input.GetVertical());
+            var xAxis = input.GetHorizontal();
+            var yAxis = input.GetVertical();
+            
+            Move(xAxis, yAxis);
         }
     }
 }

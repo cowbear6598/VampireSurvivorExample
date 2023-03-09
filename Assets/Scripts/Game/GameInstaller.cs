@@ -1,5 +1,6 @@
 ﻿using Character;
 using Player;
+using PlayerController;
 using TimeSystem;
 using Zenject;
 
@@ -14,6 +15,8 @@ namespace Game
             Container.Bind<CharacterSpawner>().AsSingle();
 
             Container.BindInterfacesAndSelfTo<TimeService>().AsSingle();
+
+            Container.BindInterfacesAndSelfTo<PCInput>().AsSingle();
         }
     }
 }
