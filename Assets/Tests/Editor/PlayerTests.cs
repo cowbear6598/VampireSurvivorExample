@@ -23,7 +23,7 @@ namespace Tests.Editor
         private ITimeService timeService;
         private IInput       input;
 
-        [Test]
+        [Test(Description = "生成玩家")]
         public void _01_Spawn_Player()
         {
             var playerFactory    = Substitute.For<IPlayerFactory>();
@@ -34,29 +34,43 @@ namespace Tests.Editor
             playerFactory.Received(1).Create(0);
         }
 
-        [Test]
-        public void _02_Player_Move()
-        {
-            var playerView = GivenAPlayer();
-            var playerMoveHandler = new PlayerMoveHandler(playerView, timeService, input);
-
-            playerMoveHandler.Move(1, 0);
-
-            Assert.AreEqual(1, playerView.GetTransform().position.x);
-        }
-
-        [Test]
-        public void _03_Player_Move_By_Controller()
+        [Test(Description = "玩家移動")]
+        [TestCase(1, 0, 1, 0)]
+        [TestCase(1, 1, 1, 1)]
+        [TestCase(0.5f, -0.2f, 0.5f, -0.2f)]
+        public void _02_Player_Move(float expectedX, float expectedY, float xAxis, float yAxis)
         {
             var playerView        = GivenAPlayer();
             var playerMoveHandler = new PlayerMoveHandler(playerView, timeService, input);
 
-            input.GetHorizontal().Returns(1);
-            input.GetVertical().Returns(0);
+            playerMoveHandler.Move(xAxis, yAxis);
+
+            var playerTransform = playerView.GetTransform();
+            PlayerPositionShouldBe(expectedX, expectedY, playerTransform);
+        }
+
+        [Test(Description = "玩家由控制器移動")]
+        [TestCase(1, 0, 1, 0)]
+        [TestCase(-1, -1, -1, -1)]
+        [TestCase(-0.5f, 0.2f, -0.5f, 0.2f)]
+        public void _03_Player_Move_By_Controller(float xAxis, float yAxis, float expectedX, float expectedY)
+        {
+            var playerView        = GivenAPlayer();
+            var playerMoveHandler = new PlayerMoveHandler(playerView, timeService, input);
+
+            input.GetHorizontal().Returns(xAxis);
+            input.GetVertical().Returns(yAxis);
 
             playerMoveHandler.Tick();
 
-            Assert.AreEqual(1, playerView.GetTransform().position.x);
+            var playerTransform = playerView.GetTransform();
+            PlayerPositionShouldBe(expectedX, expectedY, playerTransform);
+        }
+
+        private void PlayerPositionShouldBe(float expectedX, float expectedY, Transform playerTransform)
+        {
+            Assert.AreEqual(expectedX, playerTransform.position.x);
+            Assert.AreEqual(expectedY, playerTransform.position.y);
         }
 
         private PlayerView GivenAPlayer()
