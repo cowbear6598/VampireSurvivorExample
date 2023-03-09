@@ -1,5 +1,6 @@
 ﻿using Character;
 using Player;
+using TimeSystem;
 using Zenject;
 
 namespace Game
@@ -11,6 +12,8 @@ namespace Game
             Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle();
 
             Container.Bind<CharacterSpawner>().AsSingle();
+
+            Container.BindInterfacesAndSelfTo<TimeService>().AsSingle();
         }
     }
 }
