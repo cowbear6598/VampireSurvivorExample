@@ -1,8 +1,11 @@
-﻿namespace Character
+﻿using System;
+
+namespace Character
 {
+    [Serializable]
     public class CharacterData
     {
-        public readonly float moveSpeed;
+        public float moveSpeed;
 
         public CharacterData(float moveSpeed)
         {

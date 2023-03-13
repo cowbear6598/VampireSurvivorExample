@@ -1,4 +1,5 @@
 ﻿using System;
+using Character;
 using Player;
 using UnityEngine;
 using Zenject;
@@ -13,6 +14,7 @@ namespace Game
         public override void InstallBindings()
         {
             Container.BindInstance(playerSettings.factorySettings).IfNotBound();
+            Container.BindInstance(playerSettings.CharacterData).IfNotBound();
         }
     }
 
@@ -20,5 +22,6 @@ namespace Game
     public class PlayerSettings
     {
         public PlayerFactory.Settings factorySettings;
+        public CharacterData          CharacterData;
     }
 }

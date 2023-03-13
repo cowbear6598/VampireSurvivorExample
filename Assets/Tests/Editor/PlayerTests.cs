@@ -34,7 +34,7 @@ namespace Tests.Editor
             playerFactory.Received(1).Create(0);
         }
 
-        [Test]
+        [Test(Description = "生成玩家與移動模組後，移動模組的速度應該要跟給定的一樣")]
         public void _02_Player_Initialize_MoveSpeed_After_Spawn()
         {
             var characterData = new CharacterData(0.5f);
