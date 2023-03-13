@@ -34,14 +34,26 @@ namespace Tests.Editor
             playerFactory.Received(1).Create(0);
         }
 
+        [Test]
+        public void _02_Player_Initialize_MoveSpeed_After_Spawn()
+        {
+            var characterData = new CharacterData(0.5f);
+
+            var playerView        = GivenAPlayer();
+            var playerMoveHandler = new PlayerMoveHandler(playerView, characterData, timeService, input);
+
+            Assert.AreEqual(0.5f, playerMoveHandler.GetMoveSpeed());
+        }
+
         [Test(Description = "玩家移動")]
         [TestCase(1, 0, 1, 0)]
         [TestCase(1, 1, 1, 1)]
         [TestCase(0.5f, -0.2f, 0.5f, -0.2f)]
-        public void _02_Player_Move(float expectedX, float expectedY, float xAxis, float yAxis)
+        public void _03_Player_Move(float expectedX, float expectedY, float xAxis, float yAxis)
         {
+            var characterData     = new CharacterData(1);
             var playerView        = GivenAPlayer();
-            var playerMoveHandler = new PlayerMoveHandler(playerView, timeService, input);
+            var playerMoveHandler = new PlayerMoveHandler(playerView, characterData, timeService, input);
 
             playerMoveHandler.Move(xAxis, yAxis);
 
@@ -53,10 +65,11 @@ namespace Tests.Editor
         [TestCase(1, 0, 1, 0)]
         [TestCase(-1, -1, -1, -1)]
         [TestCase(-0.5f, 0.2f, -0.5f, 0.2f)]
-        public void _03_Player_Move_By_Controller(float xAxis, float yAxis, float expectedX, float expectedY)
+        public void _04_Player_Move_By_Controller(float expectedX, float expectedY, float xAxis, float yAxis)
         {
+            var characterData     = new CharacterData(1);
             var playerView        = GivenAPlayer();
-            var playerMoveHandler = new PlayerMoveHandler(playerView, timeService, input);
+            var playerMoveHandler = new PlayerMoveHandler(playerView, characterData, timeService, input);
 
             input.GetHorizontal().Returns(xAxis);
             input.GetVertical().Returns(yAxis);
