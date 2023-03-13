@@ -7,6 +7,7 @@ namespace Player
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<PlayerMoveHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerHealthHandler>().AsSingle();
         }
     }
 }

@@ -4,7 +4,7 @@ using TimeSystem;
 using UnityEngine;
 using Zenject;
 
-namespace Player
+namespace Player 
 {
     public class PlayerMoveHandler : ITickable
     {

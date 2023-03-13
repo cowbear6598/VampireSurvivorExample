@@ -20,4 +20,5 @@ MonoBehaviour:
         m_SubObjectType: 
         m_EditorAssetChanged: 0
     CharacterData:
-      moveSpeed: 1
+      moveSpeed: 5
+      hp: 100

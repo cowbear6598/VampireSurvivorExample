@@ -1,19 +1,13 @@
 ﻿using Character;
-using Player;
 
-namespace Tests.Editor
+namespace Player
 {
     public class PlayerHealthHandler
     {
-        private readonly CharacterData characterData;
-        private readonly PlayerView    playerView;
-        private          int           hp;
+        private int hp;
 
-        public PlayerHealthHandler(PlayerView playerView, CharacterData characterData)
+        public PlayerHealthHandler(CharacterData characterData)
         {
-            this.playerView    = playerView;
-            this.characterData = characterData;
-
             hp = characterData.hp;
         }
 
