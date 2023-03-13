@@ -37,7 +37,7 @@ namespace Tests.Editor
             playerFactory.Received(1).Create(0);
         }
 
-        [Test(Description = "生成玩家與移動模組後，移動模組的速度應該要跟給定的一樣")]
+        [Test(Description = "生成玩家後初始化移動速度")]
         public void _02_Player_Initialize_MoveSpeed_After_Spawn()
         {
             var playerView        = GivenAPlayer();
@@ -86,6 +86,20 @@ namespace Tests.Editor
             var playerHealthHandler = new PlayerHealthHandler(playerView, characterData);
 
             PlayerHpShouldBe(100, playerHealthHandler);
+        }
+
+        [Test(Description = "玩家受到攻擊後血量應該也要減少到指定")]
+        [TestCase(99, 1)]
+        [TestCase(0, 500)]
+        [TestCase(100, -100)]
+        public void _06_Player_Should_Decrease_Hp_After_Taken_Damage(int expectedHp, int damage)
+        {
+            var playerView          = GivenAPlayer();
+            var playerHealthHandler = new PlayerHealthHandler(playerView, characterData);
+
+            playerHealthHandler.TakenDamage(damage);
+
+            PlayerHpShouldBe(expectedHp, playerHealthHandler);
         }
 
         private void PlayerHpShouldBe(int expectedHp, PlayerHealthHandler playerHealthHandler)
