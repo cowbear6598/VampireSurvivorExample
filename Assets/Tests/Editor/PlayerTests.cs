@@ -18,10 +18,13 @@ namespace Tests.Editor
             timeService.GetDeltaTime().Returns(1);
 
             input = Substitute.For<IInput>();
+
+            characterData = new CharacterData(10f, 100);
         }
 
-        private ITimeService timeService;
-        private IInput       input;
+        private ITimeService  timeService;
+        private IInput        input;
+        private CharacterData characterData;
 
         [Test(Description = "生成玩家")]
         public void _01_Spawn_Player()
@@ -37,21 +40,18 @@ namespace Tests.Editor
         [Test(Description = "生成玩家與移動模組後，移動模組的速度應該要跟給定的一樣")]
         public void _02_Player_Initialize_MoveSpeed_After_Spawn()
         {
-            var characterData = new CharacterData(0.5f);
-
             var playerView        = GivenAPlayer();
             var playerMoveHandler = new PlayerMoveHandler(playerView, characterData, timeService, input);
 
-            Assert.AreEqual(0.5f, playerMoveHandler.GetMoveSpeed());
+            Assert.AreEqual(10f, playerMoveHandler.GetMoveSpeed());
         }
 
         [Test(Description = "玩家移動")]
-        [TestCase(1, 0, 1, 0)]
-        [TestCase(1, 1, 1, 1)]
-        [TestCase(0.5f, -0.2f, 0.5f, -0.2f)]
+        [TestCase(10, 0, 1, 0)]
+        [TestCase(10, 10, 1, 1)]
+        [TestCase(5f, -2f, 0.5f, -0.2f)]
         public void _03_Player_Move(float expectedX, float expectedY, float xAxis, float yAxis)
         {
-            var characterData     = new CharacterData(1);
             var playerView        = GivenAPlayer();
             var playerMoveHandler = new PlayerMoveHandler(playerView, characterData, timeService, input);
 
@@ -62,12 +62,11 @@ namespace Tests.Editor
         }
 
         [Test(Description = "玩家由控制器移動")]
-        [TestCase(1, 0, 1, 0)]
-        [TestCase(-1, -1, -1, -1)]
-        [TestCase(-0.5f, 0.2f, -0.5f, 0.2f)]
+        [TestCase(10, 0, 1, 0)]
+        [TestCase(-10, -10, -1, -1)]
+        [TestCase(-5f, 2f, -0.5f, 0.2f)]
         public void _04_Player_Move_By_Controller(float expectedX, float expectedY, float xAxis, float yAxis)
         {
-            var characterData     = new CharacterData(1);
             var playerView        = GivenAPlayer();
             var playerMoveHandler = new PlayerMoveHandler(playerView, characterData, timeService, input);
 
@@ -78,6 +77,20 @@ namespace Tests.Editor
 
             var playerTransform = playerView.GetTransform();
             PlayerPositionShouldBe(expectedX, expectedY, playerTransform);
+        }
+
+        [Test(Description = "玩家生成後初始化血量")]
+        public void _05_Player_Initialize_HP_Data_After_Spawn()
+        {
+            var playerView          = GivenAPlayer();
+            var playerHealthHandler = new PlayerHealthHandler(playerView, characterData);
+
+            PlayerHpShouldBe(100, playerHealthHandler);
+        }
+
+        private void PlayerHpShouldBe(int expectedHp, PlayerHealthHandler playerHealthHandler)
+        {
+            Assert.AreEqual(expectedHp, playerHealthHandler.GetCurrentHealth());
         }
 
         private void PlayerPositionShouldBe(float expectedX, float expectedY, Transform playerTransform)
