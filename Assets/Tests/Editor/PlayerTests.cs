@@ -82,7 +82,6 @@ namespace Tests.Editor
         [Test(Description = "玩家生成後初始化血量")]
         public void _05_Player_Initialize_HP_Data_After_Spawn()
         {
-            var playerView          = GivenAPlayer();
             var playerHealthHandler = new PlayerHealthHandler(characterData);
 
             PlayerHpShouldBe(100, playerHealthHandler);
@@ -94,7 +93,6 @@ namespace Tests.Editor
         [TestCase(100, -100)]
         public void _06_Player_Should_Decrease_Hp_After_Taken_Damage(int expectedHp, int damage)
         {
-            var playerView          = GivenAPlayer();
             var playerHealthHandler = new PlayerHealthHandler(characterData);
 
             playerHealthHandler.TakenDamage(damage);

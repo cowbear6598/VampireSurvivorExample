@@ -1,4 +1,5 @@
 ﻿using Character;
+using UnityEngine;
 
 namespace Player
 {
@@ -20,9 +21,11 @@ namespace Player
         {
             if (damage > 0)
                 hp -= damage;
-
+            
             if (hp < 0)
                 hp = 0;
+            
+            Debug.Log($"taken damage: {damage}, current hp: {hp}");
         }
     }
 }
